@@ -14,7 +14,7 @@ import com.soap.wsdl.SubtractResponse;
 
 public class SoapClient extends WebServiceGatewaySupport {
 
-  private final String SOAPCALLBACK = "http://tempuri.org/Add";
+  private final String SOAPCALLBACK = "http://tempuri.org/";
   private final String SOAPLOCATION = "http://www.dneonline.com/calculator.asmx";
   
   /**
@@ -29,7 +29,7 @@ public class SoapClient extends WebServiceGatewaySupport {
     addRequest.setIntA(numberA);
     addRequest.setIntB(numberB);
 
-    SoapActionCallback soapActionCallback = new SoapActionCallback(this.SOAPCALLBACK);
+    SoapActionCallback soapActionCallback = new SoapActionCallback(this.SOAPCALLBACK + "Add");
 
     AddResponse addResponse = (AddResponse) getWebServiceTemplate().marshalSendAndReceive(this.SOAPLOCATION, addRequest, soapActionCallback);
 
@@ -48,7 +48,7 @@ public class SoapClient extends WebServiceGatewaySupport {
     subtractRequest.setIntA(numberA);
     subtractRequest.setIntB(numberB);
 
-    SoapActionCallback soapActionCallback = new SoapActionCallback(this.SOAPCALLBACK);
+    SoapActionCallback soapActionCallback = new SoapActionCallback(this.SOAPCALLBACK + "Subtract");
 
     SubtractResponse subtractResponse = (SubtractResponse) getWebServiceTemplate().marshalSendAndReceive(this.SOAPLOCATION, subtractRequest, soapActionCallback);
 
@@ -67,7 +67,7 @@ public class SoapClient extends WebServiceGatewaySupport {
     multiplyRequest.setIntA(numberA);
     multiplyRequest.setIntB(numberB);
 
-    SoapActionCallback soapActionCallback = new SoapActionCallback(this.SOAPCALLBACK);
+    SoapActionCallback soapActionCallback = new SoapActionCallback(this.SOAPCALLBACK + "Multiply");
 
     MultiplyResponse multiplyResponse = (MultiplyResponse) getWebServiceTemplate().marshalSendAndReceive(this.SOAPLOCATION, multiplyRequest, soapActionCallback);
 
@@ -86,7 +86,7 @@ public class SoapClient extends WebServiceGatewaySupport {
     divideRequest.setIntA(numberA);
     divideRequest.setIntB(numberB);
 
-    SoapActionCallback soapActionCallback = new SoapActionCallback(this.SOAPCALLBACK);
+    SoapActionCallback soapActionCallback = new SoapActionCallback(this.SOAPCALLBACK + "Divide");
 
     DivideResponse divideResponse = (DivideResponse) getWebServiceTemplate().marshalSendAndReceive(this.SOAPLOCATION, divideRequest, soapActionCallback);
 
