@@ -66,6 +66,7 @@
 						</goals>
 					</execution>
 				</executions>
+				<!-- Configuración por URL -->
 				<configuration>
 					<schemaLanguage>WSDL</schemaLanguage>
 					<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
@@ -76,6 +77,17 @@
 						</schema>
 					</schemas>
 				</configuration>
+
+				<!-- Configuración por archivo físico -->
+				<!-- <configuration>
+					<schemaLanguage>WSDL</schemaLanguage>
+					<generateDirectory>${project.basedir}/src/main/resources/wsdl</generateDirectory>
+					<schemas>
+						<schemaFiles>calculator.xml</schemaFiles>
+						<packageName>com.soap.wsdl</packageName>
+						<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+					</schemas>
+				</configuration> -->
 			</plugin>
 		</plugins>
 	</build>
